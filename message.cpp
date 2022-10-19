@@ -30,7 +30,7 @@ unsigned int s_to_hex(char * s, int len) {
 // message member functions
 
 // Constructor
-message::message(char * s, int len) {
+message::message(const char * s, int len) {
 	bool go_on = true;
 	char id_s[3]; // At most 12 bits, hence 3 hex ciphers. 
 	char payload_s[16]; // At most 8 bytes, hence 16 hex ciphers.

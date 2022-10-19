@@ -7,24 +7,23 @@ enum __state__ {Idle, Run};
 
 class fsm {
 	public:
-		// Constants
-		static const message START_1;
-		static const message START_2;
-		static const message STOP;
-		
-		// Static methods
-		static void init();
-		
 		fsm();
 		fsm(const fsm&);
 		~fsm();
 		
 		// Funcitons
-		void parseEntry(char *, bool, bool, bool);
-		
+		void parse_entry(const char *, int, bool &, bool &, bool &);
 
 	private:
 		__state__ state;
+		
+		static char start1_s[];
+		static char start2_s[];
+		static char stop_s[];
+		
+		static message START_1;
+		static message START_2;
+		static message STOP;
 };
 
 #endif

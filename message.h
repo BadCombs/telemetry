@@ -7,7 +7,7 @@ class message {
 	friend bool operator== (const message&, const message&);
 	
 	public:
-		message(char *, int);
+		message(const char *, int);
 		message(const message&);
 		~message();
 		
