@@ -1,5 +1,6 @@
 #include "message.h"
 
+#include <iostream>
 #include <cmath>
 
 
@@ -17,10 +18,10 @@ unsigned int s_to_hex(char * s, int len) {
 			tmp = s[k] - '0';
 		}
 		else if ('A' <= s[k] && s[k] <= 'F') {
-			tmp = s[k] - 'A';
+			tmp = s[k] - 'A' + 10;
 		}
 
-		res += tmp * std::pow(16, len-k-1);
+		res += ((unsigned int) tmp) * std::pow(16, len-k-1);
 	}
 
 	return res;
@@ -34,7 +35,7 @@ message::message(char * s, int len) {
 	char id_s[3]; // At most 12 bits, hence 3 hex ciphers. 
 	char payload_s[16]; // At most 8 bytes, hence 16 hex ciphers.
 	
-	int i, j = 0;
+	int i = 0, j = 0;
 
 	// Copy id
 	while (go_on && i<len && i<3 && is_hex_ciph(s[i])) {
@@ -56,7 +57,7 @@ message::message(char * s, int len) {
 
 	// Copy payload
 	while (go_on && j<len &&(j-i)<8 && is_hex_ciph(s[j])) {
-		payload_s[j] = s[j];
+		payload_s[j-i] = s[j];
 		j++;
 	}
 	// Check 
@@ -92,11 +93,17 @@ uint16_t message::get_id() {return id;}
 uint32_t message::get_payload() {return payload;}
 bool message::is_correct() {return correct;}
 
+void message::print() {
+	std::cout 	<< "Id: " << id << std::endl
+				<< "Payload: " << payload << std::endl
+				<< "Correct: " << correct << std::endl;
+}
+
 // Friend functions
-friend bool operator== (const message& m1, const message& m2) {
+bool operator== (const message& m1, const message& m2) {
 	return (
 		m1.id == m2.id &&
 		m1.payload == m2.payload &&
-		m1.correct == m2.correct
-	)
+		m1.correct && m2.correct
+	);
 }
