@@ -15,7 +15,7 @@ class message {
 		uint16_t get_id();
 		uint32_t get_payload();
 		bool is_correct();
-
+		
 	private:
 		uint16_t id;
 		uint32_t payload;

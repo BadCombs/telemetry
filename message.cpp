@@ -2,6 +2,7 @@
 
 #include <cmath>
 
+
 // util functions
 bool is_hex_ciph(char c) {
 	return (('0' <= c && c <= '9') || ('A' <= c && c <= 'F'));
@@ -90,3 +91,12 @@ message::~message() {
 uint16_t message::get_id() {return id;}
 uint32_t message::get_payload() {return payload;}
 bool message::is_correct() {return correct;}
+
+// Friend functions
+friend bool operator== (const message& m1, const message& m2) {
+	return (
+		m1.id == m2.id &&
+		m1.payload == m2.payload &&
+		m1.correct == m2.correct
+	)
+}
