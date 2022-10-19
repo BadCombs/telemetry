@@ -12,7 +12,7 @@ message fsm::STOP(stop_s, 8);
 
 
 // Constructor
-fsm::fsm(): state(Run) {}
+fsm::fsm(): state(Idle) {}
 
 // Copy constructor
 fsm::fsm(const fsm& source): state(source.state) {}
@@ -46,12 +46,15 @@ void fsm::parse_entry(
 			// If receive a stop message
 			if (tmp == STOP) {
 				state = Idle;
-				start = false;
+				write = start = false;
 				end = true;
 			}
 			else {
 				if (!(tmp == START_1 || tmp == START_2)) {
 					write = true;
+				}
+				else {
+					write = false;
 				}
 				start = end = false;
 			}
