@@ -33,14 +33,10 @@ int main(void){
 	
 	// Main loop
 	while ((len = can_receive(buffer)) > 0) {
-		//std::cout << len << "\t" << buffer << std::endl;
+		std::cout << len << "\t" << buffer << std::endl;
 		machine.parse_entry(buffer, len, write, start, end);
 
-		if (write) {
-			//std::cout << "(" << time(NULL) << ") " << buffer << std::endl; 
-			output << "(" << time(NULL) << ") " << buffer << std::endl; 
-		}
-		else if (start) {
+		if (start) {
 			//std::cout << "New session started." << std::endl;
 			output.open(
 				"session" + std::to_string(session_count) + ".txt", 
@@ -51,6 +47,10 @@ int main(void){
 			//std::cout << "Previous session closed." << std::endl;
 			output.close();
 			session_count++;
+		}
+		else if (write) {
+			std::cout << "(" << time(NULL) << ") " << buffer << std::endl; 
+			output << "(" << time(NULL) << ") " << buffer << std::endl; 
 		}
 	}
 	
