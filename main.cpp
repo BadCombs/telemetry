@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
-#include <ctime>
+#include <chrono>
 #include <string>
 
 #include "fsm.h"
 
 using namespace std;
+using namespace std::chrono;
 
 extern "C"{
     #include "fake_receiver.h"
@@ -23,34 +24,39 @@ int main(void){
 	char buffer[MAX_CAN_MESSAGE_SIZE];
 	int session_count = 1;
 	
-	std::fstream output;
+	fstream output;
 
 	// Flags
 	bool write, start, end;
 	
 	// Time start
-	//time_t start = std::time(NULL);
-	
+	steady_clock::time_point start_time, stop_time;
+	start_time = steady_clock::now();
+
 	// Main loop
 	while ((len = can_receive(buffer)) > 0) {
-		std::cout << len << "\t" << buffer << std::endl;
+		// cout << len << "\t" << buffer << endl;
 		machine.parse_entry(buffer, len, write, start, end);
+		
+		// Calculate time in milliseconds
+		stop_time = steady_clock::now();
+		duration<double> time_span = stop_time - start_time;
 
 		if (start) {
-			//std::cout << "New session started." << std::endl;
 			output.open(
-				"session" + std::to_string(session_count) + ".txt", 
-				std::fstream::out
+				"session" + to_string(session_count) + ".txt", 
+				fstream::out
 			);
 		}
 		else if (end) {
-			//std::cout << "Previous session closed." << std::endl;
 			output.close();
 			session_count++;
 		}
 		else if (write) {
-			std::cout << "(" << time(NULL) << ") " << buffer << std::endl; 
-			output << "(" << time(NULL) << ") " << buffer << std::endl; 
+			cout << "(" << (uint64_t)(time_span.count()*1000) 
+			<< ") "	<< buffer << endl; 
+			output << "(" << (uint64_t)(time_span.count()*1000) 
+			<< ") " << buffer << endl;
 		}
 	}
 	
