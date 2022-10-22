@@ -13,14 +13,14 @@ class message {
 		
 		// Getter
 		uint16_t get_id();
-		uint32_t get_payload();
+		uint64_t get_payload();
 		bool is_correct();
 		
 		void print();
 
 	private:
 		uint16_t id;
-		uint32_t payload;
+		uint64_t payload;
 		bool correct;
 };
 
