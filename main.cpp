@@ -30,7 +30,6 @@ int main(void){
 	std::fstream statistics_out;
 
 	// Flags written by fsm
-	// TODO: consider if it's worth to use correct flag
 	bool write, start, end;
 	
 	// List of id_info for statistics
@@ -88,8 +87,8 @@ int main(void){
 		}
 		else if (write) {
 			// Write on file
-			std::cout << "(" << ms_since_start
-					<< ") "	<< buffer << std::endl; 
+			/*std::cout << "(" << ms_since_start
+					<< ") "	<< buffer << std::endl; */
 			output << "(" <<  ms_since_start
 					<< ") " << buffer << std::endl;
 			
