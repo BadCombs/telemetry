@@ -23,7 +23,7 @@ int main(void){
 	fsm machine;
 	int len;
 	char buffer[MAX_CAN_MESSAGE_SIZE+1]; 	// 1 for \0 to avoid memory waste
-											// while print message
+											// while printing message
 	int session_count = 1;
 	int statistics_count = 1;
 	
@@ -48,7 +48,6 @@ int main(void){
 
 	// Main loop
 	while ((len = can_receive(buffer)) > 0) {
-		//std::cout << len << "\t" << buffer << std::endl;
 		tmp_id = machine.parse_entry(buffer, len, 
 									write, start, end);
 		
@@ -90,8 +89,6 @@ int main(void){
 		}
 		else if (write) {
 			// Write on file
-			/*std::cout << "(" << ms_since_start
-					<< ") "	<< buffer << std::endl; */
 			output << "(" <<  ms_since_start
 					<< ") " << buffer << std::endl;
 			

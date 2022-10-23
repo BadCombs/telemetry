@@ -31,8 +31,8 @@ double id_info::get_mean() const {
 }
 
 // Setter
-void id_info::set_id(uint16_t i) {
-	id = i;
+void id_info::set_id(uint16_t _id) {
+	id = _id;
 }
 
 // Other functions
