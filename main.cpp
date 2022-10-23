@@ -22,7 +22,8 @@ int main(void){
 	
 	fsm machine;
 	int len;
-	char buffer[MAX_CAN_MESSAGE_SIZE];
+	char buffer[MAX_CAN_MESSAGE_SIZE+1]; 	// 1 for \0 to avoid memory waste
+											// while print message
 	int session_count = 1;
 	int statistics_count = 1;
 	
@@ -51,6 +52,8 @@ int main(void){
 		tmp_id = machine.parse_entry(buffer, len, 
 									write, start, end);
 		
+		buffer[len] = '\0';
+
 		// Calculate time in milliseconds
 		stop_time = std::chrono::steady_clock::now();
 		time_span = stop_time - start_time;

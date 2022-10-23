@@ -77,7 +77,7 @@ int can_receive(char message[MAX_CAN_MESSAGE_SIZE]){
     if(current_line_count == line_count)
         fseek(can, 0, SEEK_SET);
     
-    usleep((rand()%50 + 1)*1000);
+    //usleep((rand()%50 + 1)*1000);
 
     return bytes_received;
 }

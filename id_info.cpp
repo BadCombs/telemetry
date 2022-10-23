@@ -15,6 +15,7 @@ id_info::~id_info() {
 	id = 0x1000;		// ID does never exceed 0x0FFF because it is 
 						// a 12 bit value
 	timestamps->clear();
+	delete timestamps;
 }
 
 // Getter
