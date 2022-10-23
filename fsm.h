@@ -11,8 +11,9 @@ class fsm {
 		fsm(const fsm&);
 		~fsm();
 		
-		// Funcitons
-		void parse_entry(const char *, int, bool &, bool &, bool &);
+		// Return message id
+		uint16_t parse_entry(const char *, int, bool&, 
+							bool &, bool &);
 
 	private:
 		__state__ state;

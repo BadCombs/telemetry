@@ -29,18 +29,9 @@ double id_info::get_mean() const {
 	return res;
 }
 
-// Setter
-void id_info::set_id(uint16_t i) {
-	id = i;
-}
-
 // Other functions
 void id_info::add(uint64_t t) const {
 	timestamps->push_back(t);
-}
-void id_info::reset() {
-	id = 0x1000;
-	timestamps->clear();
 }
 
 // Overloading operator
@@ -53,7 +44,7 @@ bool id_info::operator< (const id_info& o) const {
 
 // CSV standard
 std::ostream& operator<< (std::ostream& out, const id_info& s) {
-	out << std::uppercase << std::hex << std::setfill('0') << std::setw(3)
-		<< s.get_id() << "," << std::dec << s.timestamps->size() << "," << s.get_mean();
-	return out;
+	return (out << std::uppercase << std::hex << s.get_id() << "," 
+			<< s.timestamps->size() << ","
+			<< s.get_mean());
 }

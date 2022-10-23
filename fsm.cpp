@@ -21,7 +21,7 @@ fsm::fsm(const fsm& source): state(source.state) {}
 fsm::~fsm() {state = Idle;}
 
 // Set flags for caller
-void fsm::parse_entry(
+uint16_t fsm::parse_entry(
 	const char * entry, int len,
 	bool & write,
 	bool & start, 
@@ -63,4 +63,5 @@ void fsm::parse_entry(
 	else {
 		write = start = end = false;
 	}
+	return tmp.get_id();
 }
