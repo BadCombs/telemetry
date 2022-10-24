@@ -49,7 +49,7 @@ int main(void){
 	// Open session_count.txt to check last session
 	std::fstream input;
 	try {
-		input.open("session_count.txt", std::fstream::in);
+		input.open(".session_count.txt", std::fstream::in);
 		input >> session_count;
 		input.close();
 		session_count++;
@@ -59,7 +59,7 @@ int main(void){
 	}
 
 	// Create a new directory to put files
-	int dir_created = mkdir(("session" + std::to_string(session_count)).c_str(), S_IRUSR | S_IWUSR | S_IXUSR);
+	int dir_created = mkdir(("sessions_" + std::to_string(session_count)).c_str(), S_IRUSR | S_IWUSR | S_IXUSR);
 	if (dir_created < 0) {
 		std::cerr << "Unable to create a new directory." << std::endl;
 		exit(0);
@@ -91,7 +91,7 @@ int main(void){
 		delete id_s;
 		delete tmp_id_info;
 
-		output.open("session_count.txt", std::fstream::out);
+		output.open(".session_count.txt", std::fstream::out);
 		output << session_count << std::endl;
 		output.close();
 		exit(0);
@@ -125,16 +125,16 @@ int main(void){
 		if (start) {
 			// Open new session file
 			output.open(
-				"session" + std::to_string(session_count) + "/"
-				+ "session" + std::to_string(session_count) + "_"
+				"sessions_" + std::to_string(session_count) + "/"
+				+ "session_" + std::to_string(session_count) + "_"
 				+ std::to_string(sub_session) + ".txt", 
 				std::fstream::out
 			);
 			
 			// Open new csv file
 			statistics_out.open(
-				"session" + std::to_string(session_count) + "/"
-				+ "statistics" + std::to_string(session_count) + "_"
+				"sessions_" + std::to_string(session_count) + "/"
+				+ "statistics_" + std::to_string(session_count) + "_"
 				+ std::to_string(sub_session) + ".csv",
 				std::fstream::out
 			);
@@ -172,7 +172,7 @@ int main(void){
 	delete id_s;
 	delete tmp_id_info;
 
-	output.open("session_count.txt", std::fstream::out);
+	output.open(".session_count.txt", std::fstream::out);
 	output << session_count << std::endl;
 	output.close();
 

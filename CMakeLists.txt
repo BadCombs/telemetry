@@ -8,8 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-pthread -O0 -g -w")
 
 include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    # ${CMAKE_CURRENT_SOURCE_DIR}/other/dirs
+    #${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/sources
 )
 
 add_library(
@@ -17,10 +17,10 @@ add_library(
     SHARED
     
     # Sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/fake_receiver.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/fsm.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/message.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/id_info.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sources/fake_receiver.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/sources/fsm.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sources/message.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sources/id_info.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}
@@ -29,5 +29,5 @@ target_link_libraries(${PROJECT_NAME}
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
-add_executable(project_2 main.cpp)
+add_executable(project_2 sources/main.cpp)
 target_link_libraries(project_2 ${PROJECT_NAME})
