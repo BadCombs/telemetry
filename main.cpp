@@ -149,9 +149,6 @@ int main(void){
 		}
 		else if (write) {
 			// Write on file
-			/*std::cout << "(" << timestamp
-					<< ") " << buffer << std::endl;*/
-
 			output << "(" << timestamp
 					<< ") " << buffer << std::endl;
 			
