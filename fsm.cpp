@@ -65,3 +65,7 @@ uint16_t fsm::parse_entry(
 	}
 	return tmp.get_id();
 }
+
+void fsm::reset() {
+	state = Idle;
+}

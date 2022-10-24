@@ -45,10 +45,17 @@ class fsm {
 		 * 
 		 * @return uint16_t entry ID.
 		 */
+		
 		uint16_t parse_entry(const char * entry, int len, 
 							bool& write, 
 							bool & start, 
 							bool & end);
+		
+		/**
+		 * @brief Set machine state to Idle.
+		 *
+		 */
+		void reset();
 
 	private:
 		__state__ state;
