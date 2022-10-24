@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.24.2/bin/cmake
+CMAKE_COMMAND = /snap/cmake/1156/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.24.2/bin/cmake -E rm -f
+RM = /snap/cmake/1156/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/badcombs/Uni/Eagle/recruiting/telemetry
+CMAKE_SOURCE_DIR = /home/badcombs/Uni/Eagle/telemetry
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/badcombs/Uni/Eagle/recruiting/telemetry/build
+CMAKE_BINARY_DIR = /home/badcombs/Uni/Eagle/telemetry/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Project2.dir/depend.make
@@ -70,60 +70,60 @@ include CMakeFiles/Project2.dir/progress.make
 include CMakeFiles/Project2.dir/flags.make
 
 CMakeFiles/Project2.dir/sources/fake_receiver.c.o: CMakeFiles/Project2.dir/flags.make
-CMakeFiles/Project2.dir/sources/fake_receiver.c.o: /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/fake_receiver.c
+CMakeFiles/Project2.dir/sources/fake_receiver.c.o: /home/badcombs/Uni/Eagle/telemetry/sources/fake_receiver.c
 CMakeFiles/Project2.dir/sources/fake_receiver.c.o: CMakeFiles/Project2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Project2.dir/sources/fake_receiver.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project2.dir/sources/fake_receiver.c.o -MF CMakeFiles/Project2.dir/sources/fake_receiver.c.o.d -o CMakeFiles/Project2.dir/sources/fake_receiver.c.o -c /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/fake_receiver.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/badcombs/Uni/Eagle/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Project2.dir/sources/fake_receiver.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project2.dir/sources/fake_receiver.c.o -MF CMakeFiles/Project2.dir/sources/fake_receiver.c.o.d -o CMakeFiles/Project2.dir/sources/fake_receiver.c.o -c /home/badcombs/Uni/Eagle/telemetry/sources/fake_receiver.c
 
 CMakeFiles/Project2.dir/sources/fake_receiver.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project2.dir/sources/fake_receiver.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/fake_receiver.c > CMakeFiles/Project2.dir/sources/fake_receiver.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/badcombs/Uni/Eagle/telemetry/sources/fake_receiver.c > CMakeFiles/Project2.dir/sources/fake_receiver.c.i
 
 CMakeFiles/Project2.dir/sources/fake_receiver.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project2.dir/sources/fake_receiver.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/fake_receiver.c -o CMakeFiles/Project2.dir/sources/fake_receiver.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/badcombs/Uni/Eagle/telemetry/sources/fake_receiver.c -o CMakeFiles/Project2.dir/sources/fake_receiver.c.s
 
 CMakeFiles/Project2.dir/sources/fsm.cpp.o: CMakeFiles/Project2.dir/flags.make
-CMakeFiles/Project2.dir/sources/fsm.cpp.o: /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/fsm.cpp
+CMakeFiles/Project2.dir/sources/fsm.cpp.o: /home/badcombs/Uni/Eagle/telemetry/sources/fsm.cpp
 CMakeFiles/Project2.dir/sources/fsm.cpp.o: CMakeFiles/Project2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project2.dir/sources/fsm.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project2.dir/sources/fsm.cpp.o -MF CMakeFiles/Project2.dir/sources/fsm.cpp.o.d -o CMakeFiles/Project2.dir/sources/fsm.cpp.o -c /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/fsm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/badcombs/Uni/Eagle/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project2.dir/sources/fsm.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project2.dir/sources/fsm.cpp.o -MF CMakeFiles/Project2.dir/sources/fsm.cpp.o.d -o CMakeFiles/Project2.dir/sources/fsm.cpp.o -c /home/badcombs/Uni/Eagle/telemetry/sources/fsm.cpp
 
 CMakeFiles/Project2.dir/sources/fsm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project2.dir/sources/fsm.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/fsm.cpp > CMakeFiles/Project2.dir/sources/fsm.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/badcombs/Uni/Eagle/telemetry/sources/fsm.cpp > CMakeFiles/Project2.dir/sources/fsm.cpp.i
 
 CMakeFiles/Project2.dir/sources/fsm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project2.dir/sources/fsm.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/fsm.cpp -o CMakeFiles/Project2.dir/sources/fsm.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/badcombs/Uni/Eagle/telemetry/sources/fsm.cpp -o CMakeFiles/Project2.dir/sources/fsm.cpp.s
 
 CMakeFiles/Project2.dir/sources/message.cpp.o: CMakeFiles/Project2.dir/flags.make
-CMakeFiles/Project2.dir/sources/message.cpp.o: /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/message.cpp
+CMakeFiles/Project2.dir/sources/message.cpp.o: /home/badcombs/Uni/Eagle/telemetry/sources/message.cpp
 CMakeFiles/Project2.dir/sources/message.cpp.o: CMakeFiles/Project2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project2.dir/sources/message.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project2.dir/sources/message.cpp.o -MF CMakeFiles/Project2.dir/sources/message.cpp.o.d -o CMakeFiles/Project2.dir/sources/message.cpp.o -c /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/message.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/badcombs/Uni/Eagle/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project2.dir/sources/message.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project2.dir/sources/message.cpp.o -MF CMakeFiles/Project2.dir/sources/message.cpp.o.d -o CMakeFiles/Project2.dir/sources/message.cpp.o -c /home/badcombs/Uni/Eagle/telemetry/sources/message.cpp
 
 CMakeFiles/Project2.dir/sources/message.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project2.dir/sources/message.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/message.cpp > CMakeFiles/Project2.dir/sources/message.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/badcombs/Uni/Eagle/telemetry/sources/message.cpp > CMakeFiles/Project2.dir/sources/message.cpp.i
 
 CMakeFiles/Project2.dir/sources/message.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project2.dir/sources/message.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/message.cpp -o CMakeFiles/Project2.dir/sources/message.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/badcombs/Uni/Eagle/telemetry/sources/message.cpp -o CMakeFiles/Project2.dir/sources/message.cpp.s
 
 CMakeFiles/Project2.dir/sources/id_info.cpp.o: CMakeFiles/Project2.dir/flags.make
-CMakeFiles/Project2.dir/sources/id_info.cpp.o: /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/id_info.cpp
+CMakeFiles/Project2.dir/sources/id_info.cpp.o: /home/badcombs/Uni/Eagle/telemetry/sources/id_info.cpp
 CMakeFiles/Project2.dir/sources/id_info.cpp.o: CMakeFiles/Project2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project2.dir/sources/id_info.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project2.dir/sources/id_info.cpp.o -MF CMakeFiles/Project2.dir/sources/id_info.cpp.o.d -o CMakeFiles/Project2.dir/sources/id_info.cpp.o -c /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/id_info.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/badcombs/Uni/Eagle/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project2.dir/sources/id_info.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project2.dir/sources/id_info.cpp.o -MF CMakeFiles/Project2.dir/sources/id_info.cpp.o.d -o CMakeFiles/Project2.dir/sources/id_info.cpp.o -c /home/badcombs/Uni/Eagle/telemetry/sources/id_info.cpp
 
 CMakeFiles/Project2.dir/sources/id_info.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project2.dir/sources/id_info.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/id_info.cpp > CMakeFiles/Project2.dir/sources/id_info.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/badcombs/Uni/Eagle/telemetry/sources/id_info.cpp > CMakeFiles/Project2.dir/sources/id_info.cpp.i
 
 CMakeFiles/Project2.dir/sources/id_info.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project2.dir/sources/id_info.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/badcombs/Uni/Eagle/recruiting/telemetry/sources/id_info.cpp -o CMakeFiles/Project2.dir/sources/id_info.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/badcombs/Uni/Eagle/telemetry/sources/id_info.cpp -o CMakeFiles/Project2.dir/sources/id_info.cpp.s
 
 # Object files for target Project2
 Project2_OBJECTS = \
@@ -135,17 +135,17 @@ Project2_OBJECTS = \
 # External object files for target Project2
 Project2_EXTERNAL_OBJECTS =
 
-libProject2.dylib: CMakeFiles/Project2.dir/sources/fake_receiver.c.o
-libProject2.dylib: CMakeFiles/Project2.dir/sources/fsm.cpp.o
-libProject2.dylib: CMakeFiles/Project2.dir/sources/message.cpp.o
-libProject2.dylib: CMakeFiles/Project2.dir/sources/id_info.cpp.o
-libProject2.dylib: CMakeFiles/Project2.dir/build.make
-libProject2.dylib: CMakeFiles/Project2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libProject2.dylib"
+libProject2.so: CMakeFiles/Project2.dir/sources/fake_receiver.c.o
+libProject2.so: CMakeFiles/Project2.dir/sources/fsm.cpp.o
+libProject2.so: CMakeFiles/Project2.dir/sources/message.cpp.o
+libProject2.so: CMakeFiles/Project2.dir/sources/id_info.cpp.o
+libProject2.so: CMakeFiles/Project2.dir/build.make
+libProject2.so: CMakeFiles/Project2.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/badcombs/Uni/Eagle/telemetry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libProject2.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Project2.dir/build: libProject2.dylib
+CMakeFiles/Project2.dir/build: libProject2.so
 .PHONY : CMakeFiles/Project2.dir/build
 
 CMakeFiles/Project2.dir/clean:
@@ -153,6 +153,6 @@ CMakeFiles/Project2.dir/clean:
 .PHONY : CMakeFiles/Project2.dir/clean
 
 CMakeFiles/Project2.dir/depend:
-	cd /Users/badcombs/Uni/Eagle/recruiting/telemetry/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/badcombs/Uni/Eagle/recruiting/telemetry /Users/badcombs/Uni/Eagle/recruiting/telemetry /Users/badcombs/Uni/Eagle/recruiting/telemetry/build /Users/badcombs/Uni/Eagle/recruiting/telemetry/build /Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles/Project2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/badcombs/Uni/Eagle/telemetry/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/badcombs/Uni/Eagle/telemetry /home/badcombs/Uni/Eagle/telemetry /home/badcombs/Uni/Eagle/telemetry/build /home/badcombs/Uni/Eagle/telemetry/build /home/badcombs/Uni/Eagle/telemetry/build/CMakeFiles/Project2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Project2.dir/depend
 

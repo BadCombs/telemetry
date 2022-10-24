@@ -7,8 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project2.dir/sources/id_info.cpp.o.d"
   "CMakeFiles/Project2.dir/sources/message.cpp.o"
   "CMakeFiles/Project2.dir/sources/message.cpp.o.d"
-  "libProject2.dylib"
   "libProject2.pdb"
+  "libProject2.so"
 )
 
 # Per-language clean rules from dependency scanning.

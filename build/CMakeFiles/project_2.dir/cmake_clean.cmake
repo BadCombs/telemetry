@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/Users/badcombs/Uni/Eagle/recruiting/telemetry/bin/project_2"
-  "/Users/badcombs/Uni/Eagle/recruiting/telemetry/bin/project_2.pdb"
+  "/home/badcombs/Uni/Eagle/telemetry/bin/project_2"
+  "/home/badcombs/Uni/Eagle/telemetry/bin/project_2.pdb"
   "CMakeFiles/project_2.dir/sources/main.cpp.o"
   "CMakeFiles/project_2.dir/sources/main.cpp.o.d"
 )
