@@ -20,6 +20,7 @@ extern "C"{
 // Static 
 static int session_count;
 static std::set<id_info> * id_s;
+static id_info * tmp_id_info;
 static std::fstream output;
 static std::fstream statistics_out;
 
@@ -71,7 +72,7 @@ int main(void){
 	id_s = new std::set<id_info>();
 	std::set<id_info>::iterator id_it;
 	uint16_t tmp_id;
-	id_info tmp_id_info(0x1000);
+	tmp_id_info = new id_info(0x1000);
 	
 	// Time start
 	std::chrono::system_clock::time_point tp_system;
@@ -88,6 +89,7 @@ int main(void){
 
 		close_can();
 		delete id_s;
+		delete tmp_id_info;
 
 		output.open("session_count.txt", std::fstream::out);
 		output << session_count << std::endl;
@@ -147,8 +149,8 @@ int main(void){
 		}
 		else if (write) {
 			// Write on file
-			std::cout << "(" << timestamp
-					<< ") " << buffer << std::endl;
+			/*std::cout << "(" << timestamp
+					<< ") " << buffer << std::endl;*/
 
 			output << "(" << timestamp
 					<< ") " << buffer << std::endl;
@@ -157,10 +159,10 @@ int main(void){
 			id_it = id_s->find(tmp_id);
 			// If elem not found
 			if (id_it == id_s->end()) {
-				tmp_id_info.reset();
-				tmp_id_info.set_id(tmp_id);
-				tmp_id_info.add(ms_since_new_session);
-				id_s->insert(tmp_id_info);
+				tmp_id_info->reset();
+				tmp_id_info->set_id(tmp_id);
+				tmp_id_info->add(ms_since_new_session);
+				id_s->insert(*tmp_id_info);
 			}
 			else {
 				id_it->add(ms_since_new_session);
@@ -171,11 +173,11 @@ int main(void){
 	close_streams();
 	close_can();
 	delete id_s;
+	delete tmp_id_info;
 
 	output.open("session_count.txt", std::fstream::out);
 	output << session_count << std::endl;
 	output.close();
-	exit(0);
 
     return 0;
 }
