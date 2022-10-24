@@ -40,11 +40,12 @@ int main(void){
 	std::set<id_info>::iterator id_it;
 
 	// Time start
-	std::chrono::steady_clock::time_point start_time, stop_time, 
-											last_rec_time;
-	start_time = std::chrono::steady_clock::now();
-	std::chrono::duration<double> time_span;
-	uint64_t ms_since_start;
+	std::chrono::system_clock::time_point tp_system;
+	std::chrono::steady_clock::time_point tp_new_session, tp_steady; 
+	std::chrono::duration<double, std::milli> time_span;
+	uint64_t timestamp, ms_since_new_session;
+
+	tp_new_session = std::chrono::steady_clock::now();
 
 	// Main loop
 	while ((len = can_receive(buffer)) > 0) {
@@ -53,10 +54,16 @@ int main(void){
 		
 		buffer[len] = '\0';
 
-		// Calculate time in milliseconds
-		stop_time = std::chrono::steady_clock::now();
-		time_span = stop_time - start_time;
-		ms_since_start = (uint64_t)(time_span.count()*1000);// Milliseconds 
+		// Calculate time
+		tp_system = std::chrono::system_clock::now();
+		tp_steady = std::chrono::steady_clock::now();
+		time_span = tp_steady - tp_new_session;
+		timestamp = 
+			(uint64_t)(std::chrono::duration_cast<std::chrono::seconds>(
+					tp_system.time_since_epoch()
+				).count()
+			);
+		ms_since_new_session = (uint64_t)time_span.count();
 
 		if (start) {
 			// Open new session file
@@ -86,10 +93,16 @@ int main(void){
 
 			session_count++;
 			statistics_count++;
+
+			// New Idle, new session
+			tp_new_session = std::chrono::steady_clock::now();
 		}
 		else if (write) {
 			// Write on file
-			output << "(" <<  ms_since_start
+			std::cout << "(" << timestamp
+					<< ") " << buffer << std::endl;
+
+			output << "(" << timestamp
 					<< ") " << buffer << std::endl;
 			
 			// Update statistics
@@ -98,11 +111,11 @@ int main(void){
 			if (id_it == id_s.end()) {
 				tmp_id_info.reset();
 				tmp_id_info.set_id(tmp_id);
-				tmp_id_info.add(ms_since_start);
+				tmp_id_info.add(ms_since_new_session);
 				id_s.insert(tmp_id_info);
 			}
 			else {
-				id_it->add(ms_since_start);
+				id_it->add(ms_since_new_session);
 			}
 		}
 	}

@@ -22,7 +22,7 @@ id_info::~id_info() {
 uint16_t id_info::get_id() const {return id;}
 double id_info::get_mean() const {
 	double res = 0;
-	uint64_t last_t = 0;
+	uint64_t last_t = timestamps->front();
 	for (uint64_t t: *timestamps) {
 		res += (double)(t-last_t) / (timestamps->size());
 		last_t = t;
