@@ -1,4 +1,0 @@
-/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles/Project2.dir
-/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles/project_2.dir
-/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles/edit_cache.dir
-/Users/badcombs/Uni/Eagle/recruiting/telemetry/build/CMakeFiles/rebuild_cache.dir
